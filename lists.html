@@ -63,6 +63,40 @@
       font-size: 14px;
       color: #555;
     }
+    /* === MODAL WITHOUT JS === */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal:target {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .close {
+      display: inline-block;
+      margin-top: 15px;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
   </style>
 </head>
 <body>
@@ -70,13 +104,15 @@
     <div class="title">LIST OF GUESTS</div>
     <!-- Organizer card -->
     <div style="display:flex; justify-content:center; margin-bottom:40px;">
-    <div class="guest-card">
-      <img src="photos/ibrohim.jpg" alt="Organizer Photo">
-      <div class="info">
-        <div class="name">Ibrohim M.</div>
-        <div class="position">Organizer</div>
-      </div>
-    </div>
+      <a href="#organizer" style="text-decoration:none; color:inherit;">
+        <div class="guest-card">
+          <img src="photos/ibrohim.jpg" alt="Organizer Photo">
+          <div class="info">
+            <div class="name">Ibrohim M.</div>
+            <div class="position">Organizer</div>
+          </div>
+        </div>
+      </a>
     </div>
     <div class="guest-grid">
       <!-- Example guest cards -->
@@ -206,10 +242,20 @@
       <!-- <div class="guest-card">...</div> -->
     </div>
   </div>
-  
+  <!-- ORGANIZER MODAL -->
+  <div id="organizer" class="modal">
+    <div class="modal-content">
+      <h2>Ibrohim M.</h2>
+      <p>Organizer</p>
+      <p>Main event organizer.</p>
+      <a href="#" class="close">Close</a>
+    </div>
+  </div>
+
 </body>
 
 </html>
+
 
 
 
